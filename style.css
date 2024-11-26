@@ -1,0 +1,15 @@
+html, main {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid gray;
+    padding: 4px;
+}
