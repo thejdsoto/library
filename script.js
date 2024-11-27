@@ -1,3 +1,6 @@
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
 const myLibrary = [
     {
         title: "Random book",
@@ -28,32 +31,27 @@ function addBookToLibrary() {
     // do stuff here
 }
 
-// const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
-// console.log(theHobbit.info());
-
-// const dialog = document.querySelector("dialog");
-// const showButton = document.querySelector("dialog + button");
-// const closeButton = document.querySelector("dialog button");
-
-// showButton.addEventListener("click", () => {
-//     dialog.showModal();
-// })
-
-// closeButton.addEventListener("click", () => {
-//     dialog.close();
-// })
-
-for (let i=0; i<myLibrary.length;i++) {
-    const tr = document.createElement("tr");
-    const tbody = document.querySelector("tbody");
-    tbody.appendChild(tr);
-    let ele = myLibrary[i];
-
-    for (let key in ele) {
-        const td = document.createElement("td");
-        td.innerText = ele[key];
-        tr.appendChild(td);
+function showData() {
+    for (let i=0; i<myLibrary.length;i++) {
+        const tr = document.createElement("tr");
+        const tbody = document.querySelector("tbody");
+        tbody.appendChild(tr);
+        let ele = myLibrary[i];
+    
+        for (let key in ele) {
+            const td = document.createElement("td");
+            td.innerText = ele[key];
+            tr.appendChild(td);
+        }
     }
+    
 }
 
-// console.log(myLibrary);
+showData();
+showButton.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+})
