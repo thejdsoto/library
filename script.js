@@ -35,18 +35,22 @@ function showData() {
         }
         deleteTd.appendChild(delBtn);
         tr.appendChild(deleteTd);
+
+        delBtn.addEventListener("click", () => {
+            myLibrary.splice(i, 1);
+            delBtn.parentElement.parentElement.innerHTML = '';
+        });
     }
-    
 }
 
 showData();
 showButton.addEventListener("click", () => {
     dialog.showModal();
-})
+});
 
 closeButton.addEventListener("click", () => {
     dialog.close();
-})
+});
 
 submitBookBtn.addEventListener("click", (e) => {
     let title = document.querySelector(".title-input");
