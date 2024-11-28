@@ -3,13 +3,7 @@ const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
 const submitBookBtn = document.querySelector(".submit-book");
 const tbody = document.querySelector("tbody");
-const myLibrary = [
-    {
-        title: "Random book",
-        author: "Authorify",
-        page: "3921039120",
-    }
-];
+const myLibrary = [];
 
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -24,15 +18,23 @@ function addBookToLibrary(book) {
 
 function showData() {
     for (let i=0; i<myLibrary.length;i++) {
-        const tr = document.createElement("tr"); 
+        const tr = document.createElement("tr");
+        const delBtn = document.createElement("button");
+        const deleteTd = document.createElement("td");
         tbody.appendChild(tr);
         let ele = myLibrary[i];
     
         for (let key in ele) {
             const td = document.createElement("td");
+            
+            
             td.innerText = ele[key];
+            delBtn.innerText = "Delete";
+            
             tr.appendChild(td);
         }
+        deleteTd.appendChild(delBtn);
+        tr.appendChild(deleteTd);
     }
     
 }
