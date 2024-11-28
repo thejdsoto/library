@@ -49,8 +49,9 @@ submitBookBtn.addEventListener("click", (e) => {
     let title = document.querySelector(".title-input");
     let author = document.querySelector(".author-input");
     let pages = document.querySelector(".pages-input");
+    let readStatus = document.querySelector(".read-status-input")
 
-    let book = new Book(title.value, author.value, pages.value);
+    let book = new Book(title.value, author.value, pages.value, readStatus.value);
     addBookToLibrary(book);
     tbody.innerHTML = '';
     showData();
